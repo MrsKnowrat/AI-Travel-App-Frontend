@@ -1,0 +1,12 @@
+.auth-container {
+    display: flex;
+    flex-direction: column; /* top to bottom alignment*/
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+}
