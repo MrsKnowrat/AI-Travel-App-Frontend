@@ -1,3 +1,17 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.centering-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
 .debug {
     border: 2px dashed red;
 }
+

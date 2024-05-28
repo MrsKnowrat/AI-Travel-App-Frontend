@@ -11,16 +11,16 @@ const Navbar = () => {
             <div className="navbar-appname">Journey</div>
             {
                 currentUsername && <>
-                    <ul className="nav-link-container debug">
+                    <ul className="nav-link-container">
                         <li>Home</li>
                         <li>Create Itinerary</li>
-                        <li>Contact</li>
+                        <li>Profile</li>
                     </ul>
                     <div className="navbar-profile-logout">
                         <strong>
                             {currentUsername[0].toUpperCase()}
                         </strong>
-                        < Button text="Log Out" />
+                        < Button text="Log Out" style="button-light"/>
                     </div>
                 </>
             }

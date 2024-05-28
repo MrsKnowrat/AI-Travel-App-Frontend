@@ -2,9 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
     background-color: #333;
-    color: whitesmoke; /*  */
+    color: whitesmoke; 
     padding: 2rem;
 }
 

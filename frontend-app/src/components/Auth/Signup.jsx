@@ -20,7 +20,7 @@ const Signup = ({signupFormData, setSignupFormData, handleSignup}) => {
 
     return (
         <div className="login-signup-container">
-            <h2>Signup</h2>
+            <h2>Sign Up</h2>
             <form className="common-form">
                 <div>
                     <label htmlFor="username">Username: </label>
