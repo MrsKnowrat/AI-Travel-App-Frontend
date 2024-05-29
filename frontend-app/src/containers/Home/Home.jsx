@@ -12,14 +12,14 @@ const Home = () => {
     if(currentUsername === null) {
       navigate("/auth")
     }
-  }, [])
+  }, [currentUsername, navigate])// used to be empty, testing redirect
 
   useEffect(() => {
 //cant use async in useEffect with async, so use const fetchData instead
     const fetchData = async () => {
-      const response = await getData(`itinerary/user/${currentUsername}`)
+      const response = await getData(`itineraries/user/${currentUsername}`)
       if(response.hasError) {
-      console.log("error", response.error);
+      console.log("error", response.error); 
     }
     setUserItineraries(response.data)
   }

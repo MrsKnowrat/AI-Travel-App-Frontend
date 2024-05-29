@@ -37,7 +37,7 @@ const Auth = () => {
     if (response.hasError) {
       setErrorMessages(response.error)
     } else {
-      setCurrentUsername(response.data)  // Set the entire user object(response.data.username)
+      setCurrentUsername(response.data.username)  // Set the entire user object(response.data.username)
       setErrorMessages(null)
       navigate("/")
     }
@@ -79,7 +79,7 @@ const Auth = () => {
   };
 
   return (
-    <section className="auth-container debug">
+    <section className="auth-container">
       <div>
         {
           errorMessages && <h4 className="error">{errorMessages}</h4>

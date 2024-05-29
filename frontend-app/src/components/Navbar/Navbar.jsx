@@ -21,7 +21,7 @@ const Navbar = () => {
                         </ul>
                         <div className="navbar-profile-logout">
                             <strong>
-                                {currentUsername[0].toUpperCase()}
+                                {currentUsername && currentUsername[0].toUpperCase()}
                             </strong>
                             < Button text="Log Out" style="button-light" />
                         </div>

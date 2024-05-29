@@ -5,10 +5,10 @@
     align-items: center;
     margin-top: 20px;
     width: 100%; /* Ensures it takes full width of its container, adjust as necessary */
-    border: red dashed 1px;
+    /*border: red dashed 1px;*/
 }
-
+ 
 .error {
     color: red;
     font-size: 20px;
-}
+} 

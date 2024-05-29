@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "../Button/Button";
 import "./Auth.css";
 import PropTypes from 'prop-types'; // Import PropTypes to validate props
@@ -14,7 +13,7 @@ const Signup = ({setSignupFormData, handleSignup}) => {
         console.log(event.target);
         //get name and value in one go
         const { name, value } = event.target;
-        console.log("Updating field:", name, "Value:", value);  // debug
+        //console.log("Updating field:", name, "Value:", value);  // debug
         setSignupFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value
