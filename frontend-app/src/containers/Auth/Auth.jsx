@@ -20,6 +20,9 @@ const Auth = () => {
     username: "",
     email: "",
     password: "",
+    firstName: "",
+    lastName: "",
+    dateOfBirth: "",
     street: "",
     city: "",
     state: "",
@@ -34,21 +37,20 @@ const Auth = () => {
     if (response.hasError) {
       setErrorMessages(response.error)
     } else {
-      setCurrentUser(response.data)  // Set the entire user object(response.data.username)
+      setCurrentUsername(response.data)  // Set the entire user object(response.data.username)
       setErrorMessages(null)
       navigate("/")
     }
-
   };
 
-  const handleSignUp = async () => {
+  const handleSignup = async () => {
     const transformedData = transformSignupData(signupFormData)
     const response = await postData("auth/signup", transformedData);
     console.log(response);
     if (response.hasError) {
       setErrorMessages(response.error)
     } else {
-      setCurrentUser(response.data)  // Set the entire user object(response.data.username)
+      setCurrentUsername(response.data)  // Set the entire user object(response.data.username)
       setErrorMessages(null)
       navigate("/")
     }
@@ -59,6 +61,9 @@ const Auth = () => {
       username: signupFormData.username,
       email: signupFormData.email,
       password: signupFormData.password,
+      firstName: signupFormData.firstName,
+      lastName: signupFormData.lastName,
+      dateOfBirth: signupFormData.dateOfBirth,
       address: {
         street: signupFormData.street,
         city: signupFormData.city,
@@ -87,7 +92,11 @@ const Auth = () => {
           handleLogin={handleLogin}
         />
       ) : (
-        <Signup signupFormData={signupFormData} setSignupFormData={setSignupFormData} handleSignUp={handleSignUp} />
+        <>
+        <Signup signupFormData={signupFormData} 
+        setSignupFormData={setSignupFormData} 
+        handleSignup={handleSignup} 
+        /></>
       )}
       <Button
         handleClick={toggleAuthMode}

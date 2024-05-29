@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Auth from './components/Auth/Signup';
+import Auth from './containers/Auth/Auth';
 import Header from './containers/Header/Header';
 import Home from './containers/Home/Home';
 import CreateItinerary from './containers/CreateItinerary/CreateItinerary';
@@ -10,12 +10,12 @@ import { AuthContext } from './contexts/AuthContext';
 import './App.css'
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUsername, setCurrentUsername] = useState(null);
 
   return (
-    <AuthContext.Provider value={currentUser, setCurrentUser}>
+    <AuthContext.Provider value={{currentUsername, setCurrentUsername}}>
       <main>
-        <Header currentUsername={currentUser}/>
+        <Header currentUsername={currentUsername}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

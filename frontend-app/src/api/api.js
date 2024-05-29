@@ -14,10 +14,10 @@ export const getData = async (endpoint) => {
 }
 
 export const postData = async (endpoint, body) => {
-    console.log('Post request calling ${endpoint}' , body);
+    console.log(`Post request calling ${endpoint}` , body);
 
     try {
-        const response = await fetch('${backendBaseUrl}/${endpoint}', {
+        const response = await fetch(`${backendBaseUrl}/${endpoint}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -30,4 +30,6 @@ export const postData = async (endpoint, body) => {
         console.error("Error posting data", error);
         throw error;
     }
+
 }
+    

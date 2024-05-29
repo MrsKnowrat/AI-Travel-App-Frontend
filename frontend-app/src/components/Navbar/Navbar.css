@@ -7,9 +7,20 @@
     padding: 2rem;
 }
 
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
 .navbar-appname {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
+}
+
+.navbar-tagline {
+    font-size: 14px;
+    color: #AAA; /* Light grey color; adjust as needed */
 }
 
 .nav-link-container {
