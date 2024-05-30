@@ -14,7 +14,7 @@ export const getData = async (endpoint) => {
 }
 
 export const postData = async (endpoint, body) => {
-    console.log(`Post request calling ${endpoint}` , body);
+    console.log(`Post request calling ${endpoint}`, body);
 
     try {
         const response = await fetch(`${backendBaseUrl}/${endpoint}`, {
@@ -24,12 +24,15 @@ export const postData = async (endpoint, body) => {
             },
             body: JSON.stringify(body),
         });
-        const data = response.json();
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json(); // Ensure you await the parsing of the JSON
+        console.log(data);
         return data;
     } catch (error) {
         console.error("Error posting data", error);
         throw error;
     }
-
 }
     

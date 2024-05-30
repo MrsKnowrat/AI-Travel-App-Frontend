@@ -33,7 +33,6 @@ const Auth = () => {
 
   const handleLogin = async () => {
     const response = await postData("auth/login", loginFormData);
-    console.log(response);
     if (response.hasError) {
       setErrorMessages(response.error)
     } else {
@@ -46,11 +45,10 @@ const Auth = () => {
   const handleSignup = async () => {
     const transformedData = transformSignupData(signupFormData)
     const response = await postData("auth/signup", transformedData);
-    console.log(response);
     if (response.hasError) {
       setErrorMessages(response.error)
     } else {
-      setCurrentUsername(response.data)  // Set the entire user object(response.data.username)
+      setCurrentUsername(response.data.username)  // Set the entire user object(response.data.username)
       setErrorMessages(null)
       navigate("/")
     }

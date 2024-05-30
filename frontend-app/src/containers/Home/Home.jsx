@@ -1,39 +1,47 @@
 import { useContext, useEffect, useState } from "react";
 import { getData } from "../../api/api";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import ItineraryCard from "../../components/ItineraryCard/ItineraryCard";
 
 const Home = () => {
   const navigate = useNavigate();
   const [userItineraries, setUserItineraries] = useState([])
-  const {currentUsername, setCurrentUsername} = useContext(AuthContext)
-  
+  const { currentUsername } = useContext(AuthContext)
+
   useEffect(() => {
-    if(currentUsername === null) {
+    if (currentUsername === null) {
       navigate("/auth")
     }
   }, [currentUsername, navigate])// used to be empty, testing redirect
 
   useEffect(() => {
-//cant use async in useEffect with async, so use const fetchData instead
+    //cant use async in useEffect with async, so use const fetchData instead
     const fetchData = async () => {
       const response = await getData(`itineraries/user/${currentUsername}`)
-      if(response.hasError) {
-      console.log("error", response.error); 
+      if (response.hasError) {
+        console.log("error", response.error);
+      }
+      setUserItineraries(response.data)
     }
-    setUserItineraries(response.data)
-  }
-  fetchData()
+    fetchData()
   }, []);
-// empty array means it will only run once
+  // empty array means it will only run once when the component is mounted
 
-    return (
+  return (
     <>
-      <h2>Welcome to Journey</h2>
+      <h1>Welcome to Journey</h1>
       {
-        userItineraries.map(itinerary => {
-          console.log(itinerary);
-        })
+        userItineraries.length > 0 ?
+          userItineraries.map(itinerary => (
+            <ItineraryCard key={itinerary.id} itinerary={itinerary} />
+          )) :
+          <>
+            <p>Create an itinerary to get started.</p>
+            <Link to="/create-itinerary">
+              <button>Create Itinerary</button>
+            </Link>
+          </>
       }
     </>
   );

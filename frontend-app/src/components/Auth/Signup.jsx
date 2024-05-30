@@ -10,7 +10,6 @@ const Signup = ({setSignupFormData, handleSignup}) => {
     };
 
     const handleChange = (event) => {
-        console.log(event.target);
         //get name and value in one go
         const { name, value } = event.target;
         //console.log("Updating field:", name, "Value:", value);  // debug

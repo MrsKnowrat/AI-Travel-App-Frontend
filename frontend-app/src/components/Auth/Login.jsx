@@ -6,7 +6,6 @@ const Login = ({loginFormData, setLoginFormData, handleLogin}) => {
 
     // captures any change entered into login fields
     const handleChange = (event) => {
-        console.log(event.target);
         //get name and value in one go
         const { name, value } = event.target;
         setLoginFormData((prevFormData) => ({

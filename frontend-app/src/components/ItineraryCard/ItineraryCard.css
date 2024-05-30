@@ -1,0 +1,36 @@
+.itinerary-card {
+    border: 1px solid #ccc;
+    /* Thin grey border */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 16px;
+    /* Padding inside the card */
+    margin: 10px 0;
+    /* Margin for spacing between cards */
+    background-color: #f9f9f9;
+    /* Light grey background */
+}
+
+.tag,
+.activity {
+    display: inline-block;
+    /* Makes tags and activities flow in line */
+    margin-right: 8px;
+    /* Space between tags or activities */
+    padding: 4px 8px;
+    /* Padding inside tags and activities */
+    border-radius: 4px;
+    /* Slightly rounded corners for tags and activities */
+    background-color: #e0e0e0;
+    /* Different background color for distinction */
+}
+
+.tag {
+    border: 1px solid blue;
+    /* Specific style for tags */
+}
+
+.activity {
+    border: 1px solid green;
+    /* Specific style for activities */
+}
