@@ -8,33 +8,44 @@ const ItineraryCard = ({ itinerary }) => {
       <p>{itinerary.description}</p>
       <p>Start Date: {itinerary.startDate}</p>
       <p>End Date: {itinerary.endDate}</p>
-      {/* Future implementation for tags and activities */}
       <div className="tags">
-        {itinerary.tags.map((tag, index) => (
+        {/* Check if tags is not null before mapping */}
+        {itinerary.tags && itinerary.tags.map((tag, index) => (
           <span key={index} className="tag">{tag}</span>
         ))}
       </div>
       <div className="activities">
         {itinerary.activities.map((activity, index) => (
-          <div key={index} className="activity">{activity.name}</div>
+          <div key={index} className="activity">
+            <h4>{activity.activityName}</h4>
+            {/* Check if activity tags is not empty before mapping */}
+            <div className="activity-tags">
+              {activity.tags && activity.tags.map((tag, tagIndex) => (
+                <span key={tagIndex} className="tag">{tag.tagName}</span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-// Define prop types for ItineraryCard
+// Update PropTypes to handle possible null values for tags
 ItineraryCard.propTypes = {
-    itinerary: PropTypes.shape({
-      itineraryName: PropTypes.string,
-      description: PropTypes.string,
-      startDate: PropTypes.string,
-      endDate: PropTypes.string,
-      tags: PropTypes.arrayOf(PropTypes.string),
-      activities: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string
+  itinerary: PropTypes.shape({
+    itineraryName: PropTypes.string,
+    description: PropTypes.string,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+    activities: PropTypes.arrayOf(PropTypes.shape({
+      activityName: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.shape({
+        tagName: PropTypes.string
       }))
-    }).isRequired
-  };
+    }))
+  }).isRequired
+};
 
 export default ItineraryCard;

@@ -31,7 +31,7 @@ const Login = ({loginFormData, setLoginFormData, handleLogin}) => {
                     <label htmlFor="password">Password: </label>
                     <input type="password" name="password" required onChange={handleChange}/>
                 </div>
-                <Button handleClick={onLoginButtonClick} text="Login" style="button-dark"/>
+                <Button handleClick={onLoginButtonClick} text="Let's Go!" style="button-dark"/>
             </form>
         </div>
     )

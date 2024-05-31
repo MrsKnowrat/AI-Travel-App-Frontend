@@ -22,6 +22,7 @@ const Home = () => {
       if (response.hasError) {
         console.log("error", response.error);
       }
+      console.log(response.data)
       setUserItineraries(response.data)
     }
     fetchData()

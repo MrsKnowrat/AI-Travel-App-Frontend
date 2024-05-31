@@ -41,8 +41,14 @@ const CreateItinerary = () => {
   return (
     <div>
       <h2>Create a new Itinerary</h2>
-      <form onSubmit={handleSubmit}>
-        <label className="form-label">
+      <p>Please fill out the form below to help us design your ideal activity itinerary. In the description, be sure to include:</p>
+      <ul>
+        <li><strong>Location:</strong> Specify the destination(s) you plan to visit.</li>
+        <li><strong>Traveler Needs and Preferences:</strong> Describe any specific needs or preferences you or your travel companions have. This could include dietary restrictions, accessibility requirements, or particular activities you want to include.</li>
+        <li><strong>Additional Details:</strong> The more detailed your description, the better we can tailor your itinerary to suit your needs and ensure a memorable travel experience.</li>
+      </ul>
+      <p>Remember, the key to a perfect itinerary is in the details, so please be as thorough as possible!</p>
+      <form onSubmit={handleSubmit}>        <label className="form-label">
           Choose a traveler type:
           <select value={travelerType} onChange={e => setTravelerType(e.target.value)}>
             <option value="">Select...</option>
