@@ -15,6 +15,10 @@ Journey is a web application designed to create personalized travel itineraries.
 - **React Router**: For handling routing.
 - **PropTypes**: For type-checking our component props to ensure reliability.
 
+## Product Development Plan
+[Project Plan](https://docs.google.com/spreadsheets/d/1LJ4Vg0oFXCdw2MbK_QIZC1KIO36yN9MZ4ZBGtr_k8pM/edit?usp=sharing)
+
+
 ## Project Structure
 - `src/`: Contains all the source files.
   - `components/`: Reusable React components.

@@ -1,6 +1,22 @@
+/* Default styles that apply to all sizes (mobile-first approach) */
 body {
     font-family: 'Roboto', sans-serif;
+   /* padding: 20px;  */
 }
+
+/* Medium Screens (Tablets) 
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+}*/
+
+/* Large Screens (Desktops and Laptops) 
+@media (min-width: 1025px) {
+    body {
+        padding: 60px;
+    }
+}*/
 
 .centering-wrapper {
     display: flex;
@@ -14,4 +30,3 @@ body {
 .debug {
     border: 2px dashed red;
 }
-
